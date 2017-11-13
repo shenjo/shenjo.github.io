@@ -1,0 +1,35 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add vue vue-loader vuex vue-router element-ui
+
+PATH: 
+  C:\tibco\tibrv\8.1\bin;;C:\csdev\jdk1.6.0_29\bin;D:\TOOLS\Ruby22-x64\bin;C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;Z:\IRIS2-CP\PROD\BIN;C:\Oracle\Middleware\apache-maven-3.0.4\bin;C:\csdev\ant171\bin;D:\Program Files (x86)\Git\cmd;D:\Program Files (x86)\Git\bin;D:\TOOLS\phantomjs;C:\Program Files\MIT\Kerberos\bin;C:\Anaconda3;C:\Anaconda3\Scripts;C:\Anaconda3\Library\bin;C:\Users\SHENJO\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Yarn\bin;C:\Users\SHENJO\AppData\Roaming\nvm\v6.11.0\;C:\Users\SHENJO\AppData\Local\Programs\Python\Python35\Scripts\;C:\Users\SHENJO\AppData\Local\Programs\Python\Python35\;C:\Users\SHENJO\AppData\Roaming\nvm;C:\Program Files\nodejs;d:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\SHENJO\AppData\Local\Yarn\bin;C:\Users\SHENJO\AppData\Roaming\npm
+
+Yarn version: 
+  0.24.6
+
+Node version: 
+  8.7.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "shenjo.github.io",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/shenjo/shenjo.github.io.git",
+    "author": "SHENJO <joey.shen@cargosmart.com>",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: read ECONNRESET
+      at _errnoException (util.js:1021:11)
+      at TLSWrap.onread (net.js:608:25)
