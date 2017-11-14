@@ -14,7 +14,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   output: {
-    path: __dirname,
+    path: __dirname+'/dist',
     filename: "[name].js"
   },
   resolve: {
@@ -30,7 +30,7 @@ module.exports = {
       loader: 'vue-loader'
     }, {
       test: /\.css$/,
-      loader: 'css-loader'
+      loader: 'style-loader!css-loader'
     }, {
       test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
       loader: 'url-loader',
@@ -41,6 +41,13 @@ module.exports = {
     }, {
       test: /\.md$/,
       loader: 'vue-markdown-loader'
+    },{
+      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      loader: 'url-loader',
+      options: {
+        limit: 10000,
+        name: path.posix.join('static','img/[name].[hash:7].[ext]')
+      }
     }]
   }
 };

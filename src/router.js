@@ -4,7 +4,9 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import post from './posts/post.md';
+import post from './modules/posts/post.md';
+import PostRouter from './modules/posts/router';
+
 
 Vue.use(VueRouter);
 
@@ -18,6 +20,8 @@ const routes = [{
   component: post
 }];
 
+
 router.addRoutes(routes);
+router.addRoutes(PostRouter);
 
 export default router;

@@ -2,13 +2,15 @@
  * Created by SHENJO on 11/13/2017.
  */
 import Vue from 'vue';
-import ElementUI from 'element-ui';
 import router from './router';
 import App from './App.vue';
-// import 'element-theme-chalk';
-import 'element-ui/lib/theme-chalk/index.css';
+// import ElementUI from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css';
+// Vue.use(ElementUI);
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+Vue.use(iView);
 
-Vue.use(ElementUI);
 new Vue({
     el: '#app',
     router,
