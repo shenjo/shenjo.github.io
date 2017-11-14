@@ -3,31 +3,11 @@
         <nav-header></nav-header>
         <Row class="full_height">
             <Col span="3" class="full_height home-left-side">
-
-            <Menu width="100%">
-                <router-link to="/posts" tag="li"><MenuItem name="1-1">All Posts</MenuItem></router-link>
-                <router-link to="/faq" tag="li"><MenuItem name="1-2">评论管理</MenuItem></router-link>
-                <router-link to="/faq" tag="li"><MenuItem name="1-3">举报管理</MenuItem></router-link>
-            </Menu>
-            <auto-complete
-                    v-model="searchText"
-                    icon="ios-search"
-                    placeholder="input here">
-                <div class="demo-auto-complete-item" v-for="item in data4">
-                    <div class="demo-auto-complete-group">
-                        <span>{{ item.title }}</span>
-                        <a href="https://www.google.com/search?q=iView" target="_blank">更多</a>
-                    </div>
-                    <i-option v-for="option in item.children" :value="option.title" :key="option.title">
-                        <span class="demo-auto-complete-title">{{ option.title }}</span>
-                        <span class="demo-auto-complete-count">{{ option.count }} 人关注</span>
-                    </i-option>
-                </div>
-                <a href="https://www.google.com/search?q=iView" target="_blank" class="demo-auto-complete-more">查看所有结果</a>
-            </auto-complete>
+            <Input v-model="searchText" icon="ios-search-strong" placeholder="Enter something..." ></Input>
+            <Table :columns="columns" :data="menus" :show-header="false" @on-row-click="directPage"></Table>
             </Col>
-            <Col span="21">
-            <div>ahhaah</div>
+            <Col span="21" class="blog_router_view">
+            <router-view></router-view>
             </Col>
 
         </Row>
@@ -41,53 +21,9 @@
     components: { NavHeader },
     data() {
       return {
-        message: '(define a (+ 2 3))(+ a 3)',
-        result: '',
-        errorMessage: '',
-        theme2: 'light',
+        columns: [{ title: 'Name', key: 'name' }],
+        menus: [{ name: 'All Posts', path: '/posts' }, { name: 'About Me', path: '/aboutMe' }],
         searchText: '',
-        data4: [
-          {
-            title: '话题',
-            children: [
-              {
-                title: 'iView',
-                count: 10000,
-
-              },
-              {
-                title: 'iView UI',
-                count: 10600,
-
-              }
-            ]
-          },
-          {
-            title: '问题',
-            children: [
-              {
-                title: 'iView UI 有多好',
-                count: 60100,
-
-              },
-              {
-                title: 'iView 是啥',
-                count: 30010,
-
-              }
-            ]
-          },
-          {
-            title: '文章',
-            children: [
-              {
-                title: 'iView 是一个设计语言',
-                count: 100000,
-
-              }
-            ]
-          }
-        ]
       }
     },
     methods: {
@@ -99,6 +35,14 @@
         } catch (err) {
           this.errorMessage = err.message;
         }
+      },
+      directPage(page){
+        if (_.isString(page)) {
+          this.$router.push(page);
+        } else {
+          this.$router.push(_.get(page, 'path', '/'));
+        }
+
       }
     }
   }
@@ -115,7 +59,11 @@
         left: 0;
     }
 
-    .home-left-side{
+    .blog_router_view {
+        padding-left: 10px;
+    }
+
+    .home-left-side {
         background-color: #e9eaec;
     }
 

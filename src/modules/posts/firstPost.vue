@@ -24,17 +24,23 @@
 </template>
 
 <style scoped>
-    .time{
+    .time {
         font-size: 14px;
         font-weight: bold;
     }
-    .content{
+
+    .content {
         padding-left: 5px;
     }
 </style>
 
 <script>
   export default {
-    name: 'all-posts'
+    name: 'all-posts',
+    data(){
+      return {
+        posts:[]
+      }
+    }
   }
 </script>
