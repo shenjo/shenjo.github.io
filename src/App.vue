@@ -1,16 +1,21 @@
 <template>
-    <div class="full_height">
+    <div class="full_height container">
         <nav-header></nav-header>
-        <Row class="full_height">
-            <Col span="3" class="full_height home-left-side">
-            <Input v-model="searchText" icon="ios-search-strong" placeholder="Enter something..." ></Input>
-            <Table :columns="columns" :data="menus" :show-header="false" @on-row-click="directPage"></Table>
-            </Col>
-            <Col span="21" class="blog_router_view">
-            <router-view></router-view>
-            </Col>
+        <div>
+            <Row class="full_height">
+                <Col span="3" class="full_height home-left-side">
+                <Input v-model="searchText" icon="ios-search-strong" placeholder="Enter something..." class="search_everywhere"></Input>
+                <Table :columns="columns" :data="menus" :show-header="false" @on-row-click="directPage" class="home-table"></Table>
+                <!--<Menu activeName="All Posts" v-for="item in menus" :key="item.path" width="100%">-->
+                    <!--<MenuItem name="item.name" @click="directPage(item.path)" >{{item.name}}</MenuItem>-->
+                <!--</Menu>-->
+                </Col>
+            </Row>
+            <div class="home-main-contain">
+                <router-view class="home-content"></router-view>
+            </div>
+        </div>
 
-        </Row>
     </div>
 </template>
 
@@ -21,6 +26,7 @@
     components: { NavHeader },
     data() {
       return {
+        activeMenu:'',
         columns: [{ title: 'Name', key: 'name' }],
         menus: [{ name: 'All Posts', path: '/posts' }, { name: 'About Me', path: '/aboutMe' }],
         searchText: '',
@@ -59,43 +65,47 @@
         left: 0;
     }
 
-    .blog_router_view {
-        padding-left: 10px;
+    .container{
+        padding-top: 64px;
     }
 
     .home-left-side {
-        background-color: #e9eaec;
+        width: 230px;
+        padding: 24px 16px 112px;
+        display: flex;
+        -webkit-box-align: start;
+        align-items: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        overflow: auto;
+        position: fixed;
+        top: 64px;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        border-right:1px solid rgba(0, 0, 0, 0.26);;
+        transition: .3s cubic-bezier(.4,0,.2,1);
+        transition-property: top;
     }
 
-    .demo-auto-complete-item {
-        padding: 4px 0;
-        border-bottom: 1px solid #F6F6F6;
+    .search_everywhere{
+        padding: 10px 0px;
     }
 
-    .demo-auto-complete-group {
-        font-size: 12px;
-        padding: 4px 6px;
+    .home-main-contain{
+        padding-left: 230px;
+
+    }
+    .home-table{
+        border:none;
+        width: 100%;
     }
 
-    .demo-auto-complete-group span {
-        color: #666;
-        font-weight: bold;
+    .home-content{
+        margin: auto;
+        padding: 16px;
+        max-width: 1100px;
     }
 
-    .demo-auto-complete-group a {
-        float: right;
-    }
-
-    .demo-auto-complete-count {
-        float: right;
-        color: #999;
-    }
-
-    .demo-auto-complete-more {
-        display: block;
-        margin: 0 auto;
-        padding: 4px;
-        text-align: center;
-        font-size: 12px;
-    }
 </style>
