@@ -6,9 +6,6 @@
                 <Col span="3" class="full_height home-left-side">
                 <Input v-model="searchText" icon="ios-search-strong" placeholder="Enter something..." class="search_everywhere"></Input>
                 <Table :columns="columns" :data="menus" :show-header="false" @on-row-click="directPage" class="home-table"></Table>
-                <!--<Menu activeName="All Posts" v-for="item in menus" :key="item.path" width="100%">-->
-                    <!--<MenuItem name="item.name" @click="directPage(item.path)" >{{item.name}}</MenuItem>-->
-                <!--</Menu>-->
                 </Col>
             </Row>
             <div class="home-main-contain">
@@ -26,22 +23,12 @@
     components: { NavHeader },
     data() {
       return {
-        activeMenu:'',
         columns: [{ title: 'Name', key: 'name' }],
         menus: [{ name: 'All Posts', path: '/posts' }, { name: 'About Me', path: '/aboutMe' },{name:'Comments',path:'/comments'}],
         searchText: '',
       }
     },
     methods: {
-      translate: function() {
-        this.result = '';
-        this.errorMessage = '';
-        try {
-//          this.result = myEval(this.message);
-        } catch (err) {
-          this.errorMessage = err.message;
-        }
-      },
       directPage(page){
         if (_.isString(page)) {
           this.$router.push(page);
