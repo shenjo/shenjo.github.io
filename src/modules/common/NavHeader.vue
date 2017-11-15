@@ -1,10 +1,7 @@
 <template>
     <div class="layout">
         <div class="layout-ceiling-main">
-            <a href="#">github</a> |
-                <a href="#">blog</a> |
-                <a href="#">weibo</a> |
-
+            <a href="https://github.com/shenjo/shenjo.github.io"><img src="../../assets/github.svg" alt="Github" class="img-link"></a>
         </div>
     </div>
 </template>
@@ -36,9 +33,12 @@
     .layout-ceiling-main {
         float: right;
         margin-right: 15px;
-        height:40px;
+        height: 40px;
         min-height: 40px;
         padding: 20px;
     }
 
+    .img-link{
+        height: 40px;
+    }
 </style>

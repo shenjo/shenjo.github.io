@@ -7,6 +7,7 @@ import VueRouter from 'vue-router';
 import post from './modules/posts/post.md';
 import PostRouter from './modules/posts/router';
 import AuthorRouter from './modules/Author/router';
+import CommentsRouter from './modules/comments/router';
 
 
 Vue.use(VueRouter);
@@ -25,5 +26,6 @@ const routes = [{
 router.addRoutes(routes);
 router.addRoutes(PostRouter);
 router.addRoutes(AuthorRouter);
+router.addRoutes(CommentsRouter);
 
 export default router;

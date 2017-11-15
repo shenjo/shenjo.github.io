@@ -28,7 +28,7 @@
       return {
         activeMenu:'',
         columns: [{ title: 'Name', key: 'name' }],
-        menus: [{ name: 'All Posts', path: '/posts' }, { name: 'About Me', path: '/aboutMe' }],
+        menus: [{ name: 'All Posts', path: '/posts' }, { name: 'About Me', path: '/aboutMe' },{name:'Comments',path:'/comments'}],
         searchText: '',
       }
     },
