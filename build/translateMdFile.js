@@ -13,7 +13,7 @@ const JSON_FILE_SUFFIX = '.json',
   DEST_ROOT = __dirname + '/../dist/Articles',
   ARTICLES_ROOT = __dirname + '/../src/Articles';
 
-
+let allArticles = [];
 const md = markDownIt({
   html: true
 });
@@ -30,13 +30,12 @@ _.each(files, (fileName) => {
   const createTime = fs.statSync(filePath).ctime;
   const content = fs.readFileSync(filePath, { encoding: 'utf-8' });
   const html = md.render(content);
-  fs.writeFileSync(DEST_ROOT + '/post' + JSON_FILE_SUFFIX, JSON.stringify({
-    id: fileName.substr(0,fileName.length - MD_FILE_SUFFIX.length),
-    createTime,
-    html
-  }));
+  const id = fileName.substr(0, fileName.length - MD_FILE_SUFFIX.length)
+  fs.writeFileSync(DEST_ROOT + '/post' + JSON_FILE_SUFFIX, JSON.stringify({ id, createTime, html }));
+  allArticles.push({ id });
 });
 
+fs.writeFileSync(DEST_ROOT + '/allPost' + JSON_FILE_SUFFIX, JSON.stringify(allArticles));
 
 
 
