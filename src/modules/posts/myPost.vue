@@ -24,16 +24,14 @@
       const cachePost = get(store.allPostsList, postID, null);
       if (!cachePost) {
         store.dispatch(TYPES.GET_POST_BY_ID, postID)
-          .then(function(){
-            next();
-          })
+          .then(next)
           .catch((err) => {
+          //todo: direct to error page.
             next(err)
           });
       }
     },
     mounted () {
-      console.log('mounted...');
       let postList = this.$store.state.allPostsList;
       this.post = postList[this.$route.params['id']] || null;
     }

@@ -10,7 +10,6 @@ export default {
       Vue.http.get(ROOT_DIR + postID + JSON_FILE_SUFFIX).then(res => {
         let data = res.data;
         commit(TYPES.GET_POST_BY_ID, [postID, data]);
-        console.log('resolved.')
         resolve();
       }).catch((err) => {
         commit(TYPES.GET_POST_BY_ID, [postID, null]);
