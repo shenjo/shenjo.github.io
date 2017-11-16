@@ -4,7 +4,7 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import post from './modules/posts/myPost';
+import home from './home';
 import PostRouter from './modules/posts/router';
 import AuthorRouter from './modules/Author/router';
 import CommentsRouter from './modules/comments/router';
@@ -19,7 +19,7 @@ let router = new VueRouter({
 const routes = [{
   path: '/',
   name: 'post',
-  component: post
+  component: home
 }];
 
 
