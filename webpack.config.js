@@ -9,7 +9,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    'lisper': "./src/app.js"
+    'lisper': ["./src/app.js"]
     // 'electron':"./src/electron.js"
   },
   devtool: 'inline-source-map',
