@@ -1,24 +1,12 @@
 <template>
     <Timeline>
-        <TimelineItem>
-            <p class="time">1976年</p>
-            <p class="content">Apple I 问世</p>
-        </TimelineItem>
-        <TimelineItem>
-            <p class="time">1984年</p>
-            <p class="content">发布 Macintosh</p>
-        </TimelineItem>
-        <TimelineItem>
-            <p class="time">2007年</p>
-            <p class="content">发布 iPhone</p>
-        </TimelineItem>
-        <TimelineItem>
-            <p class="time">2010年</p>
-            <p class="content">发布 iPad</p>
-        </TimelineItem>
-        <TimelineItem>
-            <p class="time">2011年10月5日</p>
-            <p class="content">史蒂夫·乔布斯去世</p>
+        <TimelineItem v-for="postMenu in postsMenuDisplay" :key="postMenu.year">
+            <p class="time">{{postMenu.year}}</p>
+            <div v-for="eachPost in postMenu.posts">
+                <p class="content">{{eachPost.time | dateFormat('MMM Do')}}
+                    <router-link :to="'/post/'+eachPost.name">{{eachPost.name}}</router-link>
+                </p>
+            </div>
         </TimelineItem>
     </Timeline>
 </template>
@@ -35,12 +23,26 @@
 </style>
 
 <script>
+  import {uniq, map, filter} from 'lodash';
   export default {
     name: 'all-posts',
-    data(){
-      return {
-        posts:[]
+    computed: {
+      postsMenu(){
+        return this.$store.state.allPostsMenu;
+      },
+      postsMenuDisplay(){
+        const years = uniq(map(this.postsMenu, postMenu => new Date(postMenu.createTime).getFullYear()));
+        return map(years, year => {
+          return {
+            year, posts: map(filter(this.postsMenu, postMenu => {
+              return new Date(postMenu.createTime).getFullYear() === year
+            }), postMenu => {
+              return { name: postMenu.id, time: postMenu.createTime }
+            })
+          }
+        });
       }
     }
+
   }
 </script>

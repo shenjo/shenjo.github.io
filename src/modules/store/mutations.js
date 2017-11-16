@@ -1,8 +1,8 @@
-import * as TYPES from './mutation-types';
+import  TYPES from './mutation-types';
 
 
 export default {
-	[TYPES.GET_ALL_POSTS](state, post) {
-		state.allPosts.push(post);
-	}
+  [TYPES.GET_POST_BY_ID](state, post) {
+    state.allPostsList[post[0]] = post[1];
+  }
 }
