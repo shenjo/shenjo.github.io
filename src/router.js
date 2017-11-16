@@ -8,6 +8,7 @@ import home from './home';
 import PostRouter from './modules/posts/router';
 import AuthorRouter from './modules/Author/router';
 import CommentsRouter from './modules/comments/router';
+import NotFound from './modules/common/Not_found';
 
 
 Vue.use(VueRouter);
@@ -28,4 +29,10 @@ router.addRoutes(PostRouter);
 router.addRoutes(AuthorRouter);
 router.addRoutes(CommentsRouter);
 
+
+router.addRoutes([{
+  path: '/*',
+  name: 'unknown page',
+  component: NotFound
+}]);
 export default router;
