@@ -2,6 +2,7 @@
  * Created by Administrator on 2017/10/30/030.
  */
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -14,7 +15,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   output: {
-    path: __dirname+'/dist',
+    path: __dirname + '/dist',
     filename: "[name].js"
   },
   resolve: {
@@ -41,13 +42,21 @@ module.exports = {
     }, {
       test: /\.md$/,
       loader: 'vue-markdown-loader'
-    },{
+    }, {
       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
       loader: 'url-loader',
       options: {
         limit: 10000,
-        name: path.posix.join('static','img/[name].[hash:7].[ext]')
+        name: path.posix.join('static', 'img/[name].[hash:7].[ext]')
       }
     }]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: `joey's blog`,
+      hash: true,
+      template:'src/index.html',
+      filename: '../index.html'
+    })
+  ]
 };

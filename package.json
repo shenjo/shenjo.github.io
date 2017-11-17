@@ -6,8 +6,8 @@
   "author": "SHENJO <610851260@qq.com>",
   "license": "MIT",
   "scripts": {
-    "posts":"node build/translateMdFile.js",
-    "webpack":"npm run posts && webpack"
+    "posts": "node build/translateMdFile.js",
+    "webpack": "npm run posts && webpack"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -27,5 +27,8 @@
     "vue-template-compiler": "^2.5.3",
     "vuex": "^3.0.1",
     "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1"
   }
 }
