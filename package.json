@@ -5,6 +5,9 @@
   "repository": "https://github.com/shenjo/shenjo.github.io.git",
   "author": "SHENJO <610851260@qq.com>",
   "license": "MIT",
+  "scripts": {
+    "posts":"node build/translateMdFile.js"
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "css-loader": "^0.28.7",

@@ -48,4 +48,10 @@ tags:['html']
    }
 </pre>
 
+这段代码会确定一个bestSrc，在外部可以setInterval去看是否已经确定了bestSrc，根据这个bestSrc
+来确定加载的路径。（不要忘记remove testIframe哦）。
+
+
+
+
 
