@@ -21,7 +21,8 @@
     },
     beforeRouteEnter (to, from, next) {
       const postID = to.params['id'];
-      const cachePost = get(store.allPostsList, postID, null);
+      console.log(store);
+      const cachePost = get(store.state.allPostsList, postID, null);
       if (!cachePost) {
         store.dispatch(TYPES.GET_POST_BY_ID, postID)
           .then(next)
@@ -29,6 +30,8 @@
           //todo: direct to error page.
             next(err)
           });
+      }else{
+        next();
       }
     },
     mounted () {

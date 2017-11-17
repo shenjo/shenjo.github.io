@@ -13,7 +13,6 @@
 </script>
 
 <style scoped>
-
     .layout {
         background-color: rgb(245, 245, 245);
         border: 1px solid #d7dde4;

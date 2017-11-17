@@ -5,6 +5,7 @@ const fs = require('fs'),
   util = require('./utils'),
   _ = require('lodash'),
   markDownIt = require('markdown-it'),
+  hljs = require('highlight.js'),
   path = require('path');
 
 
@@ -15,7 +16,16 @@ const JSON_FILE_SUFFIX = '.json',
 
 let allArticles = [];
 const md = markDownIt({
-  html: true
+  html: true,
+  highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(lang, str).value;
+      } catch (__) {}
+    }
+
+    return ''; // use external default escaping
+  }
 });
 
 if (!_.every([DEST_ROOT, ARTICLES_ROOT], util.exist)) {

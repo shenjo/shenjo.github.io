@@ -11,4 +11,3 @@ each(files, file => {
 });
 
 export default filters;
-console.log(filters);

@@ -1,7 +1,7 @@
 /**
  * Created by SHENJO on 11/14/2017.
  */
-import AuthorInfo from './AuthorInfo.md';
+import AuthorInfo from './AuthorInfo';
 const routes = [{
   path: '/aboutMe',
   name: 'aboutMe',

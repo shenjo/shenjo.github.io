@@ -6,7 +6,8 @@
   "author": "SHENJO <610851260@qq.com>",
   "license": "MIT",
   "scripts": {
-    "posts":"node build/translateMdFile.js"
+    "posts":"node build/translateMdFile.js",
+    "webpack":"npm run posts && webpack"
   },
   "dependencies": {
     "axios": "^0.17.1",

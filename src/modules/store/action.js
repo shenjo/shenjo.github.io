@@ -7,7 +7,7 @@ const ROOT_DIR = 'dist/Articles/';
 export default {
   [TYPES.GET_POST_BY_ID]({ commit }, postID) {
     return  new Promise((resolve,reject)=>{
-      Vue.http.get(ROOT_DIR + postID + JSON_FILE_SUFFIX).then(res => {
+      Vue.http.get(ROOT_DIR + postID + JSON_FILE_SUFFIX+`?_t=${new Date().getTime()}`).then(res => {
         let data = res.data;
         commit(TYPES.GET_POST_BY_ID, [postID, data]);
         resolve();

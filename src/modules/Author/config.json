@@ -1,0 +1,13 @@
+[{
+  "name":"github",
+  "link":"https://github.com/shenjo",
+  "src":"../../assets/github.svg",
+  "description":"",
+  "style":"img"
+},{
+  "name":"新浪微博",
+  "link":"https://weibo.com/u/2812120962",
+  "src":"../../assets/sinaweibo.svg",
+  "description":"",
+  "style":"img"
+}]
