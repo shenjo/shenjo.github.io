@@ -56,7 +56,7 @@ module.exports = {
       title: `joey's blog`,
       hash: true,
       template:'src/index.html',
-      filename: '../index.html'
+      filename: './index.html'
     })
   ]
 };
