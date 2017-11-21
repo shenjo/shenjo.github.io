@@ -15,7 +15,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   output: {
-    path: __dirname + '/dist',
+    path: __dirname,
     filename: "[name].js"
   },
   resolve: {
@@ -56,7 +56,7 @@ module.exports = {
       title: `joey's blog`,
       hash: true,
       template:'src/index.html',
-      filename: '../index.html'
+      filename: './index.html'
     })
   ]
 };
