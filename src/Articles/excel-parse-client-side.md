@@ -1,6 +1,3 @@
----
-tags:['javascript','excel']
----
 #parse excel in client side
 
 最近有个需求：页面上的表单数据太多，一个一个填充比较麻烦，希望能通过上传excel的方式实现表单填充。
