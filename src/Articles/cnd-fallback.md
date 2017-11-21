@@ -1,8 +1,3 @@
----
-tags:['html']
-
----
-
 #cnd fallback
 
 在开发过程中经常会用到一些静态资源(js/css/etc..),但在production环境往往会用cdn的
