@@ -10,6 +10,7 @@ import store from './modules/store/store';
 import filters from './modules/filters/index';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+import '../node_modules/highlight.js/styles/mono-blue.css'
 
 each(filters, filter => {
   Vue.filter(filter.name, filter.func);

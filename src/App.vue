@@ -50,6 +50,7 @@
         color: #2c3e50;
         top: 0;
         left: 0;
+        font-size:14px;
     }
 
     .container{

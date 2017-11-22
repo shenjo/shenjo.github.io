@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "posts": "node build/translateMdFile.js",
-    "webpack": "npm run posts && webpack"
+    "dev": "npm run posts && webpack && webpack-dev-server"
   },
   "dependencies": {
     "axios": "^0.17.1",
