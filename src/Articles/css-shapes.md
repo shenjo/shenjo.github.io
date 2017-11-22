@@ -2,25 +2,25 @@ Some base shapes by raw css
 
 
 1.square
-````
+```css
 #square {
 	width: 100px;
 	height: 100px;
 	background: red;
 }
-````
+```
 
 2.rectangle
-````
+```css
 #rectangle {
 	width: 200px;
 	height: 100px;
 	background: red;
 }
-````
+```
 
 3.circle
-````
+```css
 #circle {
 	width: 100px;
 	height: 100px;
@@ -29,9 +29,9 @@ Some base shapes by raw css
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
 }
-````
+```
 4.oval
-````
+```css
 #oval {
 	width: 200px;
 	height: 100px;
@@ -40,9 +40,9 @@ Some base shapes by raw css
 	-webkit-border-radius: 100px / 50px;
 	border-radius: 100px / 50px;
 }
-````
+```
 5.triangle-up
-````
+```css
 #triangle-up {
 	width: 0;
 	height: 0;
@@ -50,10 +50,10 @@ Some base shapes by raw css
 	border-right: 50px solid transparent;
 	border-bottom: 100px solid red;
 }
-````
+```
 
 6.riangle-down
-````
+```css
 #triangle-down {
 	width: 0;
 	height: 0;
@@ -61,10 +61,10 @@ Some base shapes by raw css
 	border-right: 50px solid transparent;
 	border-top: 100px solid red;
 }
-````
+```
 
 7.triangle-left
-````
+```css
 #triangle-left {
 	width: 0;
 	height: 0;
@@ -72,10 +72,10 @@ Some base shapes by raw css
 	border-right: 100px solid red;
 	border-bottom: 50px solid transparent;
 }
-````
+```
 
 8.triangle-right
-````
+```css
 #triangle-right {
 	width: 0;
 	height: 0;
@@ -83,19 +83,19 @@ Some base shapes by raw css
 	border-left: 100px solid red;
 	border-bottom: 50px solid transparent;
 }
-````
+```
 9.triangle-topleft
-````
+```css
 #triangle-topleft {
 	width: 0;
 	height: 0;
 	border-top: 100px solid red;
 	border-right: 100px solid transparent;
 }
-````
+```
 
 10.triangle-topright
-````
+```css
 #triangle-topright {
 	width: 0;
 	height: 0;
@@ -103,31 +103,31 @@ Some base shapes by raw css
 	border-left: 100px solid transparent;
 
 }
-````
+```
 
 11.triangle-bottomleft
-````
+```css
 #triangle-bottomleft {
 	width: 0;
 	height: 0;
 	border-bottom: 100px solid red;
 	border-right: 100px solid transparent;
 }
-````
+```
 
 12.riangle-bottomright
-````
+```css
 #triangle-bottomright {
 	width: 0;
 	height: 0;
 	border-bottom: 100px solid red;
 	border-left: 100px solid transparent;
 }
-````
+```
 
 
 13.curvedarrow
-````
+```css
 #curvedarrow {
   position: relative;
   width: 0;
@@ -139,10 +139,10 @@ Some base shapes by raw css
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
 }
-````
+```
 
 14.curvedarrow
-````
+```css
 #curvedarrow:after {
   content: "";
   position: absolute;
@@ -158,10 +158,10 @@ Some base shapes by raw css
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
 }
-````
+```
 
 15.trapezoid
-````
+```css
 #trapezoid {
 	border-bottom: 100px solid red;
 	border-left: 50px solid transparent;
@@ -169,10 +169,10 @@ Some base shapes by raw css
 	height: 0;
 	width: 100px;
 }
-````
+```
 
 16.parallelogram
-````
+```css
 #parallelogram {
 	width: 150px;
 	height: 100px;
@@ -181,10 +181,10 @@ Some base shapes by raw css
 	     -o-transform: skew(20deg);
 	background: red;
 }
-````
+```
 
 17.star-six
-````
+```css
 #star-six {
 	width: 0;
 	height: 0;
@@ -205,10 +205,10 @@ Some base shapes by raw css
 	top: 30px;
 	left: -50px;
 }
-````
+```
 
 18.star-five
-````
+```css
 #star-five {
    margin: 50px 0;
    position: relative;
@@ -260,10 +260,10 @@ Some base shapes by raw css
    -o-transform:      rotate(-70deg);
    content: '';
 }
-````
+```
 
 19.pentagon
-````
+```css
 #pentagon {
     position: relative;
     width: 54px;
@@ -283,10 +283,10 @@ Some base shapes by raw css
     border-style: solid;
     border-color: transparent transparent red;
 }
-````
+```
 
 20.hexagon
-````
+```css
 #hexagon {
 	width: 100px;
 	height: 55px;
@@ -317,10 +317,10 @@ Some base shapes by raw css
 	border-right: 50px solid transparent;
 	border-top: 25px solid red;
 }
-````
+```
 
 21.octagon
-````
+```css
 #octagon {
 	width: 100px;
 	height: 100px;
@@ -334,9 +334,9 @@ Some base shapes by raw css
 	top: 0;
 	left: 0;
 	border-bottom: 29px solid
-	 red;````
+	 red;```
 	border-left: 29px solid #e
-	ee;````
+	ee;```
 	border-right: 29px solid #eee;
 	width: 42px;
 	height: 0;
@@ -348,17 +348,17 @@ Some base shapes by raw css
 	bottom: 0;
 	left: 0;
 	border-top: 29px solid re
-	d;````
+	d;```
 	border-left: 29px solid #e
-	ee;````
+	ee;```
 	border-right: 29px solid #eee;
 	width: 42px;
 	height: 0;
 }
-````
+```
 
 22.heart
-````
+```css
 #heart {
     position: relative;
     width: 100px;
@@ -401,10 +401,10 @@ Some base shapes by raw css
          -o-transform-origin: 100% 100%;
             transform-origin :100% 100%;
 }
-````
+```
 
 23.infinity
-````
+```css
 #infinity {
     position: relative;
     width: 212px;
@@ -440,6 +440,7 @@ Some base shapes by raw css
          -o-transform: rotate(45deg);
             transform: rotate(45deg);
 }
-````
+```
 
 to see the full list of all the shapes and demo,please visit [my jsFiddle](https://jsfiddle.net/joey_shen/7gndkftc/).
+
