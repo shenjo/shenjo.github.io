@@ -12,27 +12,27 @@ import NotFound from './modules/common/Not_found';
 
 
 Vue.use(VueRouter);
-
-let router = new VueRouter({
-  mode: 'history'
-});
-
 const routes = [{
-  path: '/',
-  name: 'post',
-  component: home
+    path: '/',
+    name: 'post',
+    component: home
 }];
 
-
-router.addRoutes(routes);
-router.addRoutes(PostRouter);
-router.addRoutes(AuthorRouter);
-router.addRoutes(CommentsRouter);
-
-
-router.addRoutes([{
-  path: '/*',
-  name: 'unknown page',
-  component: NotFound
+const unknownRoutes = ([{
+    path: '/*',
+    name: 'unknown page',
+    component: NotFound
 }]);
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: routes.concat(PostRouter).concat(AuthorRouter).concat(CommentsRouter).concat(unknownRoutes)
+});
+
+router.beforeEach((to, from, next) => {
+    console.log('to router',to);
+    console.log('from router',from);
+    next();
+});
+
 export default router;
