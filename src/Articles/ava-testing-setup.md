@@ -1,3 +1,5 @@
+[//]: <> ({createTime:'2018-01-31T01:46:36.418Z'})
+
 # JavaScript Testing - AVA setup
 
 

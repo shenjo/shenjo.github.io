@@ -1,3 +1,5 @@
+[//]: <> ({createTime:'2018-01-19T03:11:34.791Z'})
+
 ### Promise All Catch All error
 
 #### 1.  Promise.all 在有一个promise reject的时候就会掉入catch方法，此时catch的error只是reject的promise的error
