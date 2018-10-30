@@ -37,7 +37,7 @@ module.exports = {
       loader: 'url-loader',
       options: {
         limit: 10000,
-        name: path.posix.join('static', 'fonts/[name].[hash:7].[ext]')
+        name: path.posix.join('/static', 'fonts/[name].[hash:7].[ext]')
       }
     }, {
       test: /\.md$/,
@@ -47,7 +47,7 @@ module.exports = {
       loader: 'url-loader',
       options: {
         limit: 10000,
-        name: path.posix.join('static', 'img/[name].[hash:7].[ext]')
+        name: path.posix.join('/static', 'img/[name].[hash:7].[ext]')
       }
     }]
   },

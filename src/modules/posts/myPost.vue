@@ -21,7 +21,6 @@
     },
     beforeRouteEnter (to, from, next) {
       const postID = to.params['id'];
-      console.log(store);
       const cachePost = get(store.state.allPostsList, postID, null);
       if (!cachePost) {
         store.dispatch(TYPES.GET_POST_BY_ID, postID)

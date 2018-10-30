@@ -2,7 +2,7 @@ import  TYPES from './mutation-types';
 import Vue from 'vue';
 
 const JSON_FILE_SUFFIX = '.json';
-const ROOT_DIR = 'dist/Articles/';
+const ROOT_DIR = '/dist/Articles/';
 
 export default {
   [TYPES.GET_POST_BY_ID]({ commit }, postID) {

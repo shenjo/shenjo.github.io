@@ -6,9 +6,9 @@ import actions from './action';
 
 Vue.use(Vuex);
 const store = new Vuex.Store({
-	state,
-	mutations,
-  actions
+    state,
+    mutations,
+    actions
 });
 
 export default store;
