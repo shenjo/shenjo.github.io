@@ -46,7 +46,7 @@ _.each(files, (fileName) => {
 });
 
 allArticles.sort((art1, art2) => {
-    return art1.createTime.getTime() > art2.createTime.getTime();
+    return art1.createTime.getTime() < art2.createTime.getTime();
 });
 
 fs.writeFileSync(DEST_ROOT + '/allPost' + JSON_FILE_SUFFIX, JSON.stringify(allArticles));

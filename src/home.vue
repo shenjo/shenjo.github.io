@@ -6,6 +6,9 @@
 
 <script>
     export default {
-      name:'home'
+        name: 'home',
+        mounted() {
+            this.$router.push('/posts')
+        }
     }
 </script>

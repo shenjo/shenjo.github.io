@@ -23,26 +23,27 @@
 </style>
 
 <script>
-  import {uniq, map, filter} from 'lodash';
-  export default {
-    name: 'all-posts',
-    computed: {
-      postsMenu(){
-        return this.$store.state.allPostsMenu;
-      },
-      postsMenuDisplay(){
-        const years = uniq(map(this.postsMenu, postMenu => new Date(postMenu.createTime).getFullYear()));
-        return map(years, year => {
-          return {
-            year, posts: map(filter(this.postsMenu, postMenu => {
-              return new Date(postMenu.createTime).getFullYear() === year
-            }), postMenu => {
-              return { name: postMenu.id, time: postMenu.createTime }
-            })
-          }
-        });
-      }
-    }
+    import {uniq, map, filter} from 'lodash';
+
+    export default {
+        name: 'all-posts',
+        computed: {
+            postsMenu() {
+                return this.$store.state.allPostsMenu;
+            },
+            postsMenuDisplay() {
+                const years = uniq(map(this.postsMenu, postMenu => new Date(postMenu.createTime).getFullYear()));
+                return map(years.sort((a, b) => b - a), year => {
+                    return {
+                        year,
+                        posts: map(filter(this.postsMenu, postMenu => new Date(postMenu.createTime).getFullYear() === year), postMenu => ({
+                            name: postMenu.id,
+                            time: postMenu.createTime
+                        }))
+                    }
+                });
+            }
+        }
 
   }
 </script>
